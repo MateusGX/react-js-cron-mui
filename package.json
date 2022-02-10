@@ -1,6 +1,6 @@
 {
   "name": "@mateusgx/react-js-cron-mui",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A React cron editor with Material UI a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
   "author": "MateusGX & Itay Levy (https://github.com/levyitay/)",
   "license": "MIT",
@@ -27,8 +27,8 @@
   "scripts": {
     "build": "del dist && yarn build:babel && yarn build:types",
     "build:babel": "concurrently \"yarn build:babel:esm\" \"yarn build:babel:cjs\"",
-    "build:babel:cjs": "BABEL_ENV=cjs babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/cjs --presets=@babel/env",
-    "build:babel:esm": "BABEL_ENV=esm babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/esm",
+    "build:babel:cjs": "cross-env BABEL_ENV=cjs babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/cjs --presets=@babel/env",
+    "build:babel:esm": "cross-env BABEL_ENV=esm babel --extensions \".ts,.tsx\" --copy-files src --out-dir dist/esm",
     "build:types": "tsc",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
@@ -71,6 +71,7 @@
     "@material-ui/core": "^4.11.2"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "fontsource-roboto": "^4.0.0"
   }
 }
