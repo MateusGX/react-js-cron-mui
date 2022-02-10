@@ -1,6 +1,6 @@
 {
   "name": "@mateusgx/react-js-cron-mui",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "A React cron editor with Material UI a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
   "author": "MateusGX & Itay Levy (https://github.com/levyitay/)",
   "license": "MIT",
