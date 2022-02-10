@@ -1,5 +1,5 @@
 {
-  "name": "react-js-cron-mui",
+  "name": "@mateusgx/react-js-cron-mui",
   "version": "1.2.0",
   "description": "A React cron editor with Material UI a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
   "author": "MateusGX & Itay Levy (https://github.com/levyitay/)",
