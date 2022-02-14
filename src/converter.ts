@@ -114,7 +114,7 @@ export function getCronStringFromValues(
   const newMinutes = period !== 'minute' && minutes ? minutes : []
 
   const parsedArray = parseCronArray(
-    [[0], newMinutes, newHours, newMonthDays, newMonths, newWeekDays],
+    [newMinutes, newHours, newMonthDays, newMonths, newWeekDays],
     humanizeValue
   )
 
@@ -224,7 +224,7 @@ export function formatValue(
  * Parses a 2-dimentional array of integers as a cron schedule
  */
 function parseCronArray(cronArr: number[][], humanizeValue?: boolean) {
-  if (cronArr.length === 6) {
+  if (cronArr.length === 5) {
     return cronArr.map((partArr, idx) => {
       const unit = UNITS[idx]
       const parsedArray = parsePartArray(partArr, unit)
@@ -240,7 +240,7 @@ function parseCronArray(cronArr: number[][], humanizeValue?: boolean) {
  * Returns the cron array as a string
  */
 function cronToString(parts: string[]) {
-  return parts.join(' ')
+  return '0 ' + parts.join(' ')
 }
 
 /**
