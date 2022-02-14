@@ -31,15 +31,7 @@ export default function Cron(props: CronProps) {
     disabled = false,
     readOnly = false,
     leadingZero = false,
-    shortcuts = [
-      '@yearly',
-      '@annually',
-      '@monthly',
-      '@weekly',
-      '@daily',
-      '@midnight',
-      '@hourly',
-    ],
+    shortcuts = [],
     clockFormat,
     ...selectProps
   } = props

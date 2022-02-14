@@ -58,12 +58,6 @@ export function setValuesFromCronString(
       shortcuts &&
       (shortcuts === true || shortcuts.includes(cronString as any))
     ) {
-      if (cronString === '@reboot') {
-        setPeriod('reboot')
-
-        return
-      }
-
       // Convert a shortcut to a valid cron string
       const shortcutObject = SUPPORTED_SHORTCUTS.find(
         (supportedShortcut) => supportedShortcut.name === cronString
@@ -108,10 +102,6 @@ export function getCronStringFromValues(
   minutes: number[] | undefined,
   humanizeValue?: boolean
 ) {
-  if (period === 'reboot') {
-    return '@reboot'
-  }
-
   const newMonths = period === 'year' && months ? months : []
   const newMonthDays =
     (period === 'year' || period === 'month') && monthDays ? monthDays : []
@@ -124,7 +114,7 @@ export function getCronStringFromValues(
   const newMinutes = period !== 'minute' && minutes ? minutes : []
 
   const parsedArray = parseCronArray(
-    [newMinutes, newHours, newMonthDays, newMonths, newWeekDays],
+    [[0], newMinutes, newHours, newMonthDays, newMonths, newWeekDays],
     humanizeValue
   )
 
