@@ -224,7 +224,7 @@ export function formatValue(
  * Parses a 2-dimentional array of integers as a cron schedule
  */
 function parseCronArray(cronArr: number[][], humanizeValue?: boolean) {
-  if (cronArr.length === 5) {
+  if (cronArr.length === 6) {
     return cronArr.map((partArr, idx) => {
       const unit = UNITS[idx]
       const parsedArray = parsePartArray(partArr, unit)
